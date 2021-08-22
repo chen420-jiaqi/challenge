@@ -9,6 +9,9 @@ const port = process.env.PORT || 3000;
 // register routes
 registerRoutes(app);
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "../public")));
+
 // create server start method
 const start = () => {
     return new Promise((resolve, reject) => {
